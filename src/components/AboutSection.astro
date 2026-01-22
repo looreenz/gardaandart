@@ -1,0 +1,48 @@
+---
+import { aboutFeatures } from "../data/about";
+import AboutItem from "./AboutItem.astro";
+---
+
+<section
+  class="relative w-full max-w-[1440px] mx-auto px-4 md:px-8 py-12 md:py-24"
+>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+    <!-- Left Content -->
+    <div class="space-y-8 order-2 lg:order-1">
+      <div class="space-y-4">
+        <span
+          class="text-xs font-bold tracking-[0.2em] text-brand-pink uppercase"
+        >
+          Exclusivity Defined
+        </span>
+        <h2
+          class="text-4xl md:text-5xl font-bold text-brand-dark leading-tight"
+        >
+          About the Apartment
+        </h2>
+        <p class="text-lg text-gray-600 font-light leading-relaxed max-w-xl">
+          A curated stay where luxury meets vibrant design. Experience our
+          exclusive 2-bedroom private apartment, designed for artistic souls and
+          modern travelers.
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        {aboutFeatures.map((feature) => <AboutItem {...feature} />)}
+      </div>
+    </div>
+
+    <!-- Right Image -->
+    <div class="order-1 lg:order-2">
+      <div
+        class="relative w-full aspect-[4/5] sm:aspect-[4/3] lg:aspect-square overflow-hidden rounded-[30px] md:rounded-[40px] shadow-2xl"
+      >
+        <img
+          src="/about.jpg"
+          alt="About Garda & Art"
+          class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+        />
+      </div>
+    </div>
+  </div>
+</section>

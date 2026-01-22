@@ -1,0 +1,40 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  variant: "cyan" | "yellow" | "pink";
+}
+
+const { title, description, variant } = Astro.props;
+
+const variants = {
+  cyan: "bg-brand-cyan-soft/50 group-hover:bg-brand-cyan-soft",
+  yellow: "bg-brand-yellow-soft/50 group-hover:bg-brand-yellow-soft",
+  pink: "bg-brand-pink-soft/50 group-hover:bg-brand-pink-soft",
+};
+
+const titleColors = {
+  cyan: "text-brand-cyan",
+  yellow: "text-brand-yellow",
+  pink: "text-brand-pink",
+};
+---
+
+<div
+  class:list={[
+    "group flex flex-col sm:flex-row items-start sm:items-center p-4 rounded-xl transition-all duration-300",
+    variants[variant],
+  ]}
+>
+  <span
+    class:list={[
+      "text-[10px] sm:text-xs font-bold tracking-widest uppercase sm:w-32 mb-1 sm:mb-0",
+      titleColors[variant],
+    ]}
+  >
+    {title}
+  </span>
+  <p class="text-sm text-gray-700 font-medium">
+    {description}
+  </p>
+</div>
