@@ -1,0 +1,36 @@
+---
+interface Props {
+  label: string;
+  value: string;
+  variant: "dark" | "cyan" | "yellow" | "pink";
+}
+
+const { label, value, variant } = Astro.props;
+
+const variants = {
+  dark: "bg-gray-100/50 border-brand-dark/10 text-brand-dark shadow-gray-100",
+  cyan: "bg-brand-cyan-soft border-brand-cyan/20 text-brand-cyan shadow-cyan-100",
+  yellow:
+    "bg-brand-yellow-soft border-brand-yellow/20 text-brand-yellow shadow-yellow-100",
+  pink: "bg-brand-pink-soft border-brand-pink/20 text-brand-pink shadow-pink-100",
+};
+
+const valueColors = {
+  dark: "text-brand-dark",
+  cyan: "text-brand-cyan",
+  yellow: "text-brand-yellow",
+  pink: "text-brand-pink",
+};
+---
+
+<div
+  class:list={[
+    "flex flex-col p-6 rounded-2xl border-2 transition-all duration-300 hover:scale-105 hover:shadow-xl",
+    variants[variant],
+  ]}
+>
+  <span class="text-xs font-bold tracking-widest opacity-60 uppercase mb-2"
+    >{label}</span
+  >
+  <span class:list={["text-3xl font-bold", valueColors[variant]]}>{value}</span>
+</div>

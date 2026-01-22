@@ -1,0 +1,10 @@
+---
+import { stats } from "../data/stats";
+import StatsCard from "./StatsCard.astro";
+---
+
+<section class="w-full max-w-[1440px] mx-auto px-4 md:px-8 py-8 md:py-12">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+    {stats.map((stat) => <StatsCard {...stat} />)}
+  </div>
+</section>
