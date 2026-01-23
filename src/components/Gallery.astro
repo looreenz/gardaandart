@@ -1,0 +1,80 @@
+---
+const images = [
+  "/gallery/3097.jpg",
+  "/gallery/3098.jpg",
+  "/gallery/3100.jpg",
+  "/gallery/3103.jpg",
+  "/gallery/about.jpg",
+];
+---
+
+<section class="w-full max-w-[1440px] mx-auto px-4 md:px-8 py-12 md:py-24">
+  <div class="mb-12">
+    <div class="flex gap-2 mb-4">
+      <div class="w-10 h-1.5 bg-brand-cyan rounded-full"></div>
+      <div class="w-10 h-1.5 bg-brand-yellow rounded-full"></div>
+      <div class="w-10 h-1.5 bg-brand-pink rounded-full"></div>
+    </div>
+    <h2 class="text-4xl md:text-5xl font-bold text-brand-dark">The Gallery</h2>
+  </div>
+
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]"
+  >
+    <!-- Featured Large Image (First one) -->
+    <div
+      class="relative group overflow-hidden rounded-[30px] md:col-span-2 md:row-span-2 shadow-lg"
+    >
+      <img
+        src={images[1]}
+        alt="Gallery Image 1"
+        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+      <div
+        class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"
+      >
+      </div>
+    </div>
+
+    <!-- Second Image -->
+    <div class="relative group overflow-hidden rounded-[30px] shadow-lg">
+      <img
+        src={images[0]}
+        alt="Gallery Image 2"
+        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+      <div
+        class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"
+      >
+      </div>
+    </div>
+
+    <!-- Third Image -->
+    <div class="relative group overflow-hidden rounded-[30px] shadow-lg">
+      <img
+        src={images[4]}
+        alt="Gallery Image 3"
+        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+      <div
+        class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"
+      >
+      </div>
+    </div>
+
+    <!-- Fourth Image (Wide) -->
+    <div
+      class="relative group overflow-hidden rounded-[30px] md:col-span-2 lg:col-span-1 shadow-lg"
+    >
+      <img
+        src={images[2]}
+        alt="Gallery Image 4"
+        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+      <div
+        class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"
+      >
+      </div>
+    </div>
+  </div>
+</section>
