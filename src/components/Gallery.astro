@@ -1,4 +1,6 @@
 ---
+import { useTranslations } from "../i18n/utils";
+
 const images = [
   "/gallery/3097.jpg",
   "/gallery/3098.jpg",
@@ -6,16 +8,24 @@ const images = [
   "/gallery/3103.jpg",
   "/gallery/about.jpg",
 ];
+
+const lang = (Astro.currentLocale as "it" | "en" | "de") || "it";
+const t = useTranslations(lang);
 ---
 
-<section id="gallery" class="w-full max-w-[1440px] mx-auto px-4 md:px-8 py-12 md:py-24">
+<section
+  id="gallery"
+  class="w-full max-w-[1440px] mx-auto px-4 md:px-8 py-12 md:py-24"
+>
   <div class="mb-12">
     <div class="flex gap-2 mb-4">
       <div class="w-10 h-1.5 bg-brand-cyan rounded-full"></div>
       <div class="w-10 h-1.5 bg-brand-yellow rounded-full"></div>
       <div class="w-10 h-1.5 bg-brand-pink rounded-full"></div>
     </div>
-    <h2 class="text-4xl md:text-5xl font-bold text-brand-dark">The Gallery</h2>
+    <h2 class="text-4xl md:text-5xl font-bold text-brand-dark">
+      {t("gallery.title")}
+    </h2>
   </div>
 
   <div

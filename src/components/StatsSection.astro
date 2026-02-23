@@ -1,10 +1,28 @@
 ---
 import { stats } from "../data/stats";
 import StatsCard from "./StatsCard.astro";
+import { useTranslations } from "../i18n/utils";
+
+const lang = (Astro.currentLocale as "it" | "en" | "de") || "it";
+const t = useTranslations(lang);
+const labels = [
+  t("stats.floor"),
+  t("stats.sqMeters"),
+  t("stats.bedrooms"),
+  t("stats.bathrooms"),
+] as string[];
 ---
 
 <section class="w-full max-w-[1440px] mx-auto px-4 md:px-8 py-8 md:py-12">
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-    {stats.map((stat) => <StatsCard {...stat} />)}
+    {
+      stats.map((stat, i) => (
+        <StatsCard
+          label={labels[i]}
+          value={stat.value}
+          variant={stat.variant}
+        />
+      ))
+    }
   </div>
 </section>

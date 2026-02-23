@@ -1,15 +1,32 @@
 ---
-const bookingUrl = "https://www.booking.com/hotel/it/garda-amp-art-apartment.html";
+import { useTranslations } from "../i18n/utils";
+
+const bookingUrl =
+  "https://www.booking.com/hotel/it/garda-amp-art-apartment.html";
+const lang = (Astro.currentLocale as "it" | "en" | "de") || "it";
+const t = useTranslations(lang);
 ---
 
-<section id="booking" class="w-full max-w-[1440px] mx-auto px-4 md:px-8 py-12 md:py-24">
+<section
+  id="booking"
+  class="w-full max-w-[1440px] mx-auto px-4 md:px-8 py-12 md:py-24"
+>
   <div
     class="relative overflow-hidden rounded-[30px] md:rounded-[40px] bg-brand-dark px-8 md:px-16 py-16 md:py-20 text-center"
   >
     <!-- Background decoration -->
-    <div class="absolute -top-20 -left-20 w-80 h-80 bg-brand-cyan/10 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-brand-pink/10 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute top-0 right-1/4 w-40 h-40 bg-brand-yellow/10 rounded-full blur-2xl pointer-events-none"></div>
+    <div
+      class="absolute -top-20 -left-20 w-80 h-80 bg-brand-cyan/10 rounded-full blur-3xl pointer-events-none"
+    >
+    </div>
+    <div
+      class="absolute -bottom-20 -right-20 w-80 h-80 bg-brand-pink/10 rounded-full blur-3xl pointer-events-none"
+    >
+    </div>
+    <div
+      class="absolute top-0 right-1/4 w-40 h-40 bg-brand-yellow/10 rounded-full blur-2xl pointer-events-none"
+    >
+    </div>
 
     <!-- Brand Bars -->
     <div class="flex gap-2 justify-center mb-8">
@@ -20,23 +37,37 @@ const bookingUrl = "https://www.booking.com/hotel/it/garda-amp-art-apartment.htm
 
     <!-- Content -->
     <div class="relative z-10 max-w-2xl mx-auto">
-      <span class="text-xs font-bold tracking-[0.2em] text-brand-cyan uppercase">Ready to book?</span>
-      <h2 class="text-4xl md:text-6xl font-bold text-white mt-3 mb-5 leading-tight">
-        Your Perfect Stay<br class="hidden sm:block" /> Awaits
+      <span class="text-xs font-bold tracking-[0.2em] text-brand-cyan uppercase"
+        >Ready to book?</span
+      >
+      <h2
+        class="text-4xl md:text-6xl font-bold text-white mt-3 mb-5 leading-tight"
+      >
+        {t("booking.title")}
       </h2>
       <p class="text-white/70 text-lg font-light mb-10 leading-relaxed">
-        Immerse yourself in art, lake views and Italian comfort.<br class="hidden md:block" />
-        Book directly through Booking.com for the best rates.
+        {t("booking.subtitle")}
       </p>
 
       <!-- Score badge -->
-      <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-5 py-3 mb-8">
+      <div
+        class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-5 py-3 mb-8"
+      >
         <div class="flex gap-1">
-          {[1,2,3,4,5].map(() => (
-            <svg class="w-4 h-4 text-brand-yellow fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 0 0 .95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 0 0-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 0 0-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 0 0-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 0 0 .951-.69l1.07-3.292Z"/></svg>
-          ))}
+          {
+            [1, 2, 3, 4, 5].map(() => (
+              <svg
+                class="w-4 h-4 text-brand-yellow fill-current"
+                viewBox="0 0 20 20"
+              >
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 0 0 .95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 0 0-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 0 0-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 0 0-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 0 0 .951-.69l1.07-3.292Z" />
+              </svg>
+            ))
+          }
         </div>
-        <span class="text-white text-sm font-semibold">9.6 · Exceptional · 87 reviews</span>
+        <span class="text-white text-sm font-semibold"
+          >9.6 · Exceptional · 87 reviews</span
+        >
       </div>
 
       <!-- CTA Buttons -->
@@ -47,24 +78,55 @@ const bookingUrl = "https://www.booking.com/hotel/it/garda-amp-art-apartment.htm
           rel="noopener noreferrer"
           class="inline-flex items-center justify-center gap-2 bg-brand-cyan text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-cyan-500/30 hover:scale-105 transition-all duration-300 active:scale-95"
         >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z"/></svg>
-          Book on Booking.com
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z"
+            ></path></svg
+          >
+          {t("booking.checkAvailability")}
         </a>
         <a
           href="#contact"
           class="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/20 hover:scale-105 transition-all duration-300 active:scale-95"
         >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z"/></svg>
-          Contact Host
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z"
+            ></path></svg
+          >
+          {t("booking.contactUs")}
         </a>
       </div>
     </div>
 
     <!-- Bottom info pills -->
     <div class="relative z-10 flex flex-wrap justify-center gap-3 mt-10">
-      {["Check-in: 3:00 PM", "Check-out: 11:00 AM", "Free Cancellation", "2 Bedrooms · 4 Guests"].map((item) => (
-        <span class="text-xs text-white/60 border border-white/20 rounded-full px-4 py-1.5">{item}</span>
-      ))}
+      {
+        [
+          "Check-in: 3:00 PM",
+          "Check-out: 11:00 AM",
+          "Free Cancellation",
+          "2 Bedrooms · 4 Guests",
+        ].map((item) => (
+          <span class="text-xs text-white/60 border border-white/20 rounded-full px-4 py-1.5">
+            {item}
+          </span>
+        ))
+      }
     </div>
   </div>
 </section>

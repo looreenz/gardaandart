@@ -1,6 +1,11 @@
 ---
 import { aboutFeatures } from "../data/about";
 import AboutItem from "./AboutItem.astro";
+import { useTranslations } from "../i18n/utils";
+
+const lang = (Astro.currentLocale as "it" | "en" | "de") || "it";
+const t = useTranslations(lang);
+const features = t("about.features") as any[];
 ---
 
 <section
@@ -14,22 +19,28 @@ import AboutItem from "./AboutItem.astro";
         <span
           class="text-xs font-bold tracking-[0.2em] text-brand-pink uppercase"
         >
-          Exclusivity Defined
+          {t("about.subtitle")}
         </span>
         <h2
           class="text-4xl md:text-5xl font-bold text-brand-dark leading-tight"
         >
-          About the Apartment
+          {t("about.title")}
         </h2>
         <p class="text-lg text-gray-600 font-light leading-relaxed max-w-xl">
-          A curated stay where luxury meets vibrant design. Experience our
-          exclusive 2-bedroom private apartment, designed for artistic souls and
-          modern travelers.
+          {t("about.description")}
         </p>
       </div>
 
       <div class="space-y-3">
-        {aboutFeatures.map((feature) => <AboutItem {...feature} />)}
+        {
+          aboutFeatures.map((feature, i) => (
+            <AboutItem
+              title={features[i].title}
+              description={features[i].description}
+              variant={feature.variant}
+            />
+          ))
+        }
       </div>
     </div>
 

@@ -1,5 +1,10 @@
 ---
+import { useTranslations } from "../i18n/utils";
+
 const { class: className } = Astro.props;
+
+const lang = (Astro.currentLocale as "it" | "en" | "de") || "it";
+const t = useTranslations(lang);
 ---
 
 <section
@@ -36,15 +41,12 @@ const { class: className } = Astro.props;
         <h1
           class="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight"
         >
-          Artistic Living at<br class="hidden sm:block" /> Garda & Art
+          {t("hero.title")}
         </h1>
         <p
           class="text-base md:text-xl text-white/90 mb-8 md:mb-10 leading-relaxed font-light"
         >
-          A curated stay where luxury meets vibrant design.<br
-            class="hidden md:block"
-          />
-          Experience our exclusive 2-bedroom private apartment.
+          {t("hero.subtitle")}
         </p>
 
         <!-- CTA Button -->
@@ -52,7 +54,7 @@ const { class: className } = Astro.props;
           href="#booking"
           class="inline-block bg-brand-cyan text-white px-8 md:px-10 py-3.5 md:py-4 rounded-full font-bold text-base md:text-lg shadow-lg hover:shadow-cyan-500/30 hover:scale-105 transition-all duration-300 active:scale-95"
         >
-          Rent Now
+          {t("hero.cta")}
         </a>
       </div>
     </div>

@@ -1,11 +1,47 @@
 ---
+import { useTranslations } from "../i18n/utils";
+
+const lang = (Astro.currentLocale as "it" | "en" | "de") || "it";
+const t = useTranslations(lang);
+const translatedRules = t("houseRules.rules") as any[];
+
 const rules = [
-  { icon: "clock-in", title: "Check-in", value: "3:00 PM – 10:00 PM", variant: "cyan" },
-  { icon: "clock-out", title: "Check-out", value: "Before 11:00 AM", variant: "yellow" },
-  { icon: "users", title: "Max Guests", value: "4 guests", variant: "pink" },
-  { icon: "no-smoke", title: "No Smoking", value: "Entire property", variant: "cyan" },
-  { icon: "no-pets", title: "No Pets", value: "Not allowed", variant: "yellow" },
-  { icon: "no-party", title: "No Parties", value: "Quiet hours: 10PM–8AM", variant: "pink" },
+  {
+    icon: "clock-in",
+    title: translatedRules[0]?.title || "Check-in",
+    value: translatedRules[0]?.value || "3:00 PM – 10:00 PM",
+    variant: "cyan",
+  },
+  {
+    icon: "clock-out",
+    title: translatedRules[1]?.title || "Check-out",
+    value: translatedRules[1]?.value || "Before 11:00 AM",
+    variant: "yellow",
+  },
+  {
+    icon: "users",
+    title: translatedRules[2]?.title || "Max Guests",
+    value: translatedRules[2]?.value || "4 guests",
+    variant: "pink",
+  },
+  {
+    icon: "no-smoke",
+    title: translatedRules[3]?.title || "No Smoking",
+    value: translatedRules[3]?.value || "Entire property",
+    variant: "cyan",
+  },
+  {
+    icon: "no-pets",
+    title: translatedRules[4]?.title || "No Pets",
+    value: translatedRules[4]?.value || "Not allowed",
+    variant: "yellow",
+  },
+  {
+    icon: "no-party",
+    title: translatedRules[5]?.title || "No Parties",
+    value: translatedRules[5]?.value || "Quiet hours: 10PM–8AM",
+    variant: "pink",
+  },
 ];
 
 const variantStyles = {
@@ -36,29 +72,52 @@ const iconsSvg: Record<string, string> = {
 };
 ---
 
-<section id="rules" class="w-full max-w-[1440px] mx-auto px-4 md:px-8 py-12 md:py-20">
+<section
+  id="rules"
+  class="w-full max-w-[1440px] mx-auto px-4 md:px-8 py-12 md:py-20"
+>
   <div class="mb-10">
     <div class="flex gap-2 mb-4">
       <div class="w-10 h-1.5 bg-brand-cyan rounded-full"></div>
       <div class="w-10 h-1.5 bg-brand-yellow rounded-full"></div>
       <div class="w-10 h-1.5 bg-brand-pink rounded-full"></div>
     </div>
-    <span class="text-xs font-bold tracking-[0.2em] text-brand-pink uppercase">Good to know</span>
-    <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mt-2">House Rules</h2>
+    <span class="text-xs font-bold tracking-[0.2em] text-brand-pink uppercase"
+      >{t("houseRules.subtitle")}</span
+    >
+    <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mt-2">
+      {t("houseRules.title")}
+    </h2>
   </div>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-    {rules.map((rule) => {
-      const s = variantStyles[rule.variant as keyof typeof variantStyles];
-      return (
-        <div class:list={["flex items-center gap-4 p-5 rounded-2xl border-2 hover:scale-[1.02] transition-all duration-300", s.wrapper]}>
-          <span class:list={[s.label]} set:html={iconsSvg[rule.icon]} />
-          <div>
-            <p class:list={["text-xs font-bold uppercase tracking-widest mb-1", s.label]}>{rule.title}</p>
-            <p class:list={["font-semibold text-sm", s.value]}>{rule.value}</p>
+    {
+      rules.map((rule) => {
+        const s = variantStyles[rule.variant as keyof typeof variantStyles];
+        return (
+          <div
+            class:list={[
+              "flex items-center gap-4 p-5 rounded-2xl border-2 hover:scale-[1.02] transition-all duration-300",
+              s.wrapper,
+            ]}
+          >
+            <span class:list={[s.label]} set:html={iconsSvg[rule.icon]} />
+            <div>
+              <p
+                class:list={[
+                  "text-xs font-bold uppercase tracking-widest mb-1",
+                  s.label,
+                ]}
+              >
+                {rule.title}
+              </p>
+              <p class:list={["font-semibold text-sm", s.value]}>
+                {rule.value}
+              </p>
+            </div>
           </div>
-        </div>
-      );
-    })}
+        );
+      })
+    }
   </div>
 </section>

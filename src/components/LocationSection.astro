@@ -1,5 +1,10 @@
 ---
 import { nearbyAttractions, propertyAddress } from "../data/location";
+import { useTranslations } from "../i18n/utils";
+
+const lang = (Astro.currentLocale as "it" | "en" | "de") || "it";
+const t = useTranslations(lang);
+const attractions = t("location.attractions") as any[];
 
 const iconsSvg: Record<string, string> = {
   waves: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5a17.919 17.919 0 0 1-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" /></svg>`,
@@ -13,7 +18,10 @@ const iconsSvg: Record<string, string> = {
 };
 ---
 
-<section id="location" class="w-full max-w-[1440px] mx-auto px-4 md:px-8 py-12 md:py-24">
+<section
+  id="location"
+  class="w-full max-w-[1440px] mx-auto px-4 md:px-8 py-12 md:py-24"
+>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
     <!-- Left: Text + Address -->
     <div class="space-y-8">
@@ -23,28 +31,53 @@ const iconsSvg: Record<string, string> = {
           <div class="w-10 h-1.5 bg-brand-yellow rounded-full"></div>
           <div class="w-10 h-1.5 bg-brand-pink rounded-full"></div>
         </div>
-        <span class="text-xs font-bold tracking-[0.2em] text-brand-yellow uppercase">Where we are</span>
-        <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mt-2 mb-4">Location</h2>
+        <span
+          class="text-xs font-bold tracking-[0.2em] text-brand-yellow uppercase"
+          >{t("location.subtitle")}</span
+        >
+        <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mt-2 mb-4">
+          {t("location.title")}
+        </h2>
         <p class="text-lg text-gray-500 font-light leading-relaxed">
-          Nestled in the charming town of <strong class="text-brand-dark font-semibold">Garda</strong>, on the southeastern shore of Italy's largest and most beautiful lake. Steps from the water, minutes from everything.
+          {t("location.description")}
         </p>
       </div>
 
       <!-- Address Card -->
-      <div class="bg-brand-cyan-soft border-2 border-brand-cyan/20 rounded-2xl p-6 flex items-center gap-5">
-        <div class="w-12 h-12 bg-brand-cyan rounded-xl flex items-center justify-center shrink-0">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/>
+      <div
+        class="bg-brand-cyan-soft border-2 border-brand-cyan/20 rounded-2xl p-6 flex items-center gap-5"
+      >
+        <div
+          class="w-12 h-12 bg-brand-cyan rounded-xl flex items-center justify-center shrink-0"
+        >
+          <svg
+            class="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+            ></path>
           </svg>
         </div>
         <div>
-          <p class="font-bold text-brand-dark">{propertyAddress.city}, {propertyAddress.province}</p>
-          <p class="text-sm text-gray-500">{propertyAddress.region} · {propertyAddress.country}</p>
+          <p class="font-bold text-brand-dark">
+            {propertyAddress.city}, {propertyAddress.province}
+          </p>
+          <p class="text-sm text-gray-500">
+            {propertyAddress.region} · {propertyAddress.country}
+          </p>
         </div>
       </div>
 
       <!-- Map embed placeholder -->
-      <div class="w-full aspect-video rounded-[24px] overflow-hidden shadow-lg border border-brand-border">
+      <div
+        class="w-full aspect-video rounded-[24px] overflow-hidden shadow-lg border border-brand-border"
+      >
         <iframe
           src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5579.0!2d${propertyAddress.coordinates.lng}!3d${propertyAddress.coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4781e3bfb3b3b3b3%3A0x0!2sGarda%2C+VR%2C+Italy!5e0!3m2!1sen!2sit!4v1700000000000!5m2!1sen!2sit`}
           width="100%"
@@ -53,8 +86,7 @@ const iconsSvg: Record<string, string> = {
           allowfullscreen
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          title="Garda & Art Apartment Location"
-        ></iframe>
+          title="Garda & Art Apartment Location"></iframe>
       </div>
     </div>
 
@@ -62,27 +94,66 @@ const iconsSvg: Record<string, string> = {
     <div>
       <h3 class="text-xl font-bold text-brand-dark mb-6">Nearby Attractions</h3>
       <div class="space-y-3">
-        {nearbyAttractions.map((attr, i) => {
-          const colors = [
-            { bg: "bg-brand-cyan-soft", border: "border-brand-cyan/20", icon: "text-brand-cyan", badge: "bg-brand-cyan text-white" },
-            { bg: "bg-brand-yellow-soft", border: "border-brand-yellow/20", icon: "text-brand-yellow", badge: "bg-brand-yellow text-brand-dark" },
-            { bg: "bg-brand-pink-soft", border: "border-brand-pink/20", icon: "text-brand-pink", badge: "bg-brand-pink text-white" },
-          ];
-          const c = colors[i % 3];
-          return (
-            <div class:list={["flex items-center gap-4 p-4 rounded-2xl border-2 hover:scale-[1.02] transition-all duration-300", c.bg, c.border]}>
-              <div class:list={["shrink-0", c.icon]} set:html={iconsSvg[attr.icon] ?? iconsSvg["waves"]} />
-              <div class="flex-1 min-w-0">
-                <p class="font-bold text-brand-dark text-sm">{attr.name}</p>
-                <p class="text-xs text-gray-500 truncate">{attr.description}</p>
+        {
+          nearbyAttractions.map((attr, i) => {
+            const colors = [
+              {
+                bg: "bg-brand-cyan-soft",
+                border: "border-brand-cyan/20",
+                icon: "text-brand-cyan",
+                badge: "bg-brand-cyan text-white",
+              },
+              {
+                bg: "bg-brand-yellow-soft",
+                border: "border-brand-yellow/20",
+                icon: "text-brand-yellow",
+                badge: "bg-brand-yellow text-brand-dark",
+              },
+              {
+                bg: "bg-brand-pink-soft",
+                border: "border-brand-pink/20",
+                icon: "text-brand-pink",
+                badge: "bg-brand-pink text-white",
+              },
+            ];
+            const c = colors[i % 3];
+            return (
+              <div
+                class:list={[
+                  "flex items-center gap-4 p-4 rounded-2xl border-2 hover:scale-[1.02] transition-all duration-300",
+                  c.bg,
+                  c.border,
+                ]}
+              >
+                <div
+                  class:list={["shrink-0", c.icon]}
+                  set:html={iconsSvg[attr.icon] ?? iconsSvg["waves"]}
+                />
+                <div class="flex-1 min-w-0">
+                  <p class="font-bold text-brand-dark text-sm">
+                    {attractions[i].name}
+                  </p>
+                  <p class="text-xs text-gray-500 truncate">
+                    {attractions[i].description}
+                  </p>
+                </div>
+                <div class="text-right shrink-0">
+                  <span
+                    class:list={[
+                      "text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide",
+                      c.badge,
+                    ]}
+                  >
+                    {attr.distance}
+                  </span>
+                  <p class="text-[10px] text-gray-400 mt-1">
+                    {attractions[i].time}
+                  </p>
+                </div>
               </div>
-              <div class="text-right shrink-0">
-                <span class:list={["text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide", c.badge]}>{attr.distance}</span>
-                <p class="text-[10px] text-gray-400 mt-1">{attr.time}</p>
-              </div>
-            </div>
-          );
-        })}
+            );
+          })
+        }
       </div>
     </div>
   </div>
