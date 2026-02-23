@@ -11,8 +11,8 @@ export const stats: Stat[] = [
     variant: "dark",
   },
   {
-    label: "SQUARE FEETS",
-    value: "50",
+    label: "SQ METERS",
+    value: "50m²",
     variant: "cyan",
   },
   {

@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 ---
 
@@ -16,10 +17,17 @@ import "../styles/global.css";
       rel="stylesheet"
     />
     <meta name="generator" content={Astro.generator} />
-    <title>Garda & Art Apartment</title>
+    <title>Garda & Art Apartment · Lake Garda, Italy</title>
+    <meta name="description" content="Garda & Art Apartment — a curated 2-bedroom stay where luxury meets vibrant design on the shores of Lake Garda, Italy. Private terrace, lake views, fully equipped kitchen." />
+    <meta name="keywords" content="Lake Garda apartment, Garda Italy accommodation, holiday rental Lake Garda, art apartment Italy, Garda Art" />
+    <meta property="og:title" content="Garda & Art Apartment · Lake Garda, Italy" />
+    <meta property="og:description" content="A curated stay where luxury meets vibrant design. 2 bedrooms, private terrace, lake views. Book now on Booking.com." />
+    <meta property="og:image" content="/hero.jpg" />
+    <meta property="og:type" content="website" />
   </head>
   <body>
     <Header />
     <slot />
+    <Footer />
   </body>
 </html>

@@ -1,0 +1,64 @@
+---
+const rules = [
+  { icon: "clock-in", title: "Check-in", value: "3:00 PM – 10:00 PM", variant: "cyan" },
+  { icon: "clock-out", title: "Check-out", value: "Before 11:00 AM", variant: "yellow" },
+  { icon: "users", title: "Max Guests", value: "4 guests", variant: "pink" },
+  { icon: "no-smoke", title: "No Smoking", value: "Entire property", variant: "cyan" },
+  { icon: "no-pets", title: "No Pets", value: "Not allowed", variant: "yellow" },
+  { icon: "no-party", title: "No Parties", value: "Quiet hours: 10PM–8AM", variant: "pink" },
+];
+
+const variantStyles = {
+  cyan: {
+    wrapper: "bg-brand-cyan-soft border-brand-cyan/20",
+    label: "text-brand-cyan",
+    value: "text-brand-dark",
+  },
+  yellow: {
+    wrapper: "bg-brand-yellow-soft border-brand-yellow/20",
+    label: "text-brand-yellow",
+    value: "text-brand-dark",
+  },
+  pink: {
+    wrapper: "bg-brand-pink-soft border-brand-pink/20",
+    label: "text-brand-pink",
+    value: "text-brand-dark",
+  },
+};
+
+const iconsSvg: Record<string, string> = {
+  "clock-in": `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>`,
+  "clock-out": `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>`,
+  users: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z"/></svg>`,
+  "no-smoke": `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 18.364A9 9 0 0 0 5.636 5.636m12.728 12.728A9 9 0 0 1 5.636 5.636m12.728 12.728L5.636 5.636"/></svg>`,
+  "no-pets": `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 18.364A9 9 0 0 0 5.636 5.636m12.728 12.728A9 9 0 0 1 5.636 5.636m12.728 12.728L5.636 5.636"/></svg>`,
+  "no-party": `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 18.364A9 9 0 0 0 5.636 5.636m12.728 12.728A9 9 0 0 1 5.636 5.636m12.728 12.728L5.636 5.636"/></svg>`,
+};
+---
+
+<section id="rules" class="w-full max-w-[1440px] mx-auto px-4 md:px-8 py-12 md:py-20">
+  <div class="mb-10">
+    <div class="flex gap-2 mb-4">
+      <div class="w-10 h-1.5 bg-brand-cyan rounded-full"></div>
+      <div class="w-10 h-1.5 bg-brand-yellow rounded-full"></div>
+      <div class="w-10 h-1.5 bg-brand-pink rounded-full"></div>
+    </div>
+    <span class="text-xs font-bold tracking-[0.2em] text-brand-pink uppercase">Good to know</span>
+    <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mt-2">House Rules</h2>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {rules.map((rule) => {
+      const s = variantStyles[rule.variant as keyof typeof variantStyles];
+      return (
+        <div class:list={["flex items-center gap-4 p-5 rounded-2xl border-2 hover:scale-[1.02] transition-all duration-300", s.wrapper]}>
+          <span class:list={[s.label]} set:html={iconsSvg[rule.icon]} />
+          <div>
+            <p class:list={["text-xs font-bold uppercase tracking-widest mb-1", s.label]}>{rule.title}</p>
+            <p class:list={["font-semibold text-sm", s.value]}>{rule.value}</p>
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</section>
