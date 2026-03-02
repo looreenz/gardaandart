@@ -120,4 +120,14 @@ const iconsSvg: Record<string, string> = {
       })
     }
   </div>
+
+  {
+    t("houseRules.taxInfo") && (
+      <div class="mt-8 p-5 bg-brand-cyan-soft border-2 border-brand-cyan/20 rounded-2xl">
+        <p class="text-brand-dark text-sm leading-relaxed whitespace-pre-line text-balance text-center">
+          {t("houseRules.taxInfo")}
+        </p>
+      </div>
+    )
+  }
 </section>

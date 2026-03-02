@@ -38,7 +38,7 @@ export const ui = {
       title: "Benvenuti a Garda & Art",
       subtitle: "Una selezione di colori e comfort",
       description:
-        "Immergiti in uno spazio in cui il design contemporaneo incontra la bellezza senza tempo del Lago di Garda. Il nostro appartamento recentemente rinnovato vanta opere d'arte originali, arredi su misura e tutti i comfort moderni.",
+        "Appartamento molto elegante all'insegna dell'arte, spazioso e completo di ogni attrezzatura che possa servire per trascorrere un soggiorno sentendosi a casa. L'alloggio è composto da una nuovissima cucina super attrezzata completa di piano cottura ad induzione, microonde, Melita, bollitore, piastra per toast/panini, frigorifero e congelatore. E' presente ampia zona living con divano letto, tavolo da 6 posti e smart tv da 66\", una camera da letto matrimoniale con tv, una seconda camera con 3 letti singoli, ampio bagno, raffreddamento a pavimento, terrazzo/solarium con ombrellone, sdraio e tavolo, affacciato su giardino privato. L'appartamento si trova a piano terra con parcheggio riservato in un piazzale privato della casa.",
       features: [
         {
           title: "SUITE PADRONALE",
@@ -89,7 +89,7 @@ export const ui = {
       title: "Posizione Perfetta",
       subtitle: "A due passi dal lago, vicino a tutto",
       description:
-        "Situato nell'incantevole città di Garda, sulla sponda sud-orientale del lago più grande e bello d'Italia. A due passi dall'acqua, a pochi minuti da tutto.",
+        "Situato ai piedi del monte Stivo, meta ideale per escursioni, percorsi adatti ad MTB e climbing. Torbole raggiungibili anche tramite piste ciclabili e mezzi pubblici. Vicinissimo a super market, ATM, tabacchi, hairsalon e fermata bus.",
       attractions: [
         {
           name: "Riva del Lago di Garda",
@@ -156,6 +156,8 @@ export const ui = {
         { title: "Animali", value: "Non ammessi" },
         { title: "Nessuna festa", value: "Orari di silenzio 22:00 - 08:00" },
       ],
+      taxInfo:
+        "Il comune di Arco richiede una tassa di soggiorno di 1,50€ a testa per persona a notte da pagare in loco al momento del check-in. Per ogni ospite è previsto un ulteriore costo di 15€ a soggiorno per il kit asciugamani lenzuola, cuscini da pagare i loco al check-in.",
     },
     booking: {
       title: "Pronto a Prenotare?",
@@ -201,7 +203,7 @@ export const ui = {
       title: "Willkommen bei Garda & Art",
       subtitle: "Eine Komposition aus Farbe und Komfort",
       description:
-        "Tauchen Sie ein in einen Raum, in dem zeitgenössisches Design auf die zeitlose Schönheit des Gardasees trifft. Unser kürzlich renoviertes Apartment verfügt über Originalkunstwerke, maßgeschneiderte Möbel und jeden modernen Komfort.",
+        "Sehr elegantes Apartment im Zeichen der Kunst, geräumig und komplett mit allem ausgestattet, was man für einen Aufenthalt braucht, bei dem man sich wie zu Hause fühlt. Die Unterkunft besteht aus einer brandneuen, voll ausgestatteten Küche mit Induktionskochfeld, Mikrowelle, Melitta, Wasserkocher, Toaster/Panini-Maker, Kühl- und Gefrierschrank. Es gibt einen großen Wohnbereich mit Schlafsofa, Tisch für 6 Personen und 66-Zoll-Smart-TV, ein Schlafzimmer mit Doppelbett und TV, ein zweites Schlafzimmer mit 3 Einzelbetten, ein großes Badezimmer, Fußbodenkühlung, Terrasse/Solarium mit Sonnenschirm, Liegestühlen und Tisch mit Blick auf einen privaten Garten. Das Apartment befindet sich im Erdgeschoss mit reserviertem Parkplatz in einem privaten Innenhof des Hauses.",
       features: [
         {
           title: "MASTER-SUITE",
@@ -252,7 +254,7 @@ export const ui = {
       title: "Perfekte Lage",
       subtitle: "Nur Schritte vom See entfernt, nah an allem",
       description:
-        "Eingebettet in die bezaubernde Stadt Garda am südöstlichen Ufer des größten und schönsten Sees Italiens. Nur wenige Schritte vom Wasser und Minuten von allem entfernt.",
+        "Am Fuße des Monte Stivo gelegen, ein ideales Ziel für Ausflüge, MTB-Strecken und Klettern. Torbole ist auch über Radwege und öffentliche Verkehrsmittel erreichbar. Ganz in der Nähe von Supermärkten, Geldautomaten, Tabakläden, Friseursalons und Bushaltestellen.",
       attractions: [
         {
           name: "Ufer des Gardasees",
@@ -319,6 +321,8 @@ export const ui = {
         { title: "Keine Haustiere", value: "Nicht erlaubt" },
         { title: "Keine Partys", value: "Ruhezeiten 22:00 - 08:00 Uhr" },
       ],
+      taxInfo:
+        "Die Gemeinde Arco erhebt eine Kurtaxe von 1,50 € pro Person und Nacht, die beim Check-in vor Ort zu entrichten ist. Für jeden Gast fällt ein zusätzlicher Betrag von 15 € pro Aufenthalt für das Handtuch- und Bettwäsche-Set an, der beim Check-in vor Ort zu zahlen ist.",
     },
     booking: {
       title: "Bereit zur Buchung?",
@@ -364,7 +368,7 @@ export const ui = {
       title: "Welcome to Garda & Art",
       subtitle: "A Curation of color and comfort",
       description:
-        "Immerse yourself in a space where contemporary design meets the timeless beauty of Lake Garda. Our recently renovated apartment features original artworks, bespoke furnishings, and every modern convenience.",
+        'Very elegant apartment under the banner of art, spacious and complete with every equipment needed to spend a stay feeling at home. The accommodation consists of a brand new fully equipped kitchen complete with induction hob, microwave, Melita, kettle, toaster/panini maker, fridge and freezer. There is a large living area with sofa bed, 6-seater table and 66" smart TV, a double bedroom with TV, a second bedroom with 3 single beds, large bathroom, underfloor cooling, terrace/solarium with umbrella, deck chairs and table, overlooking a private garden. The apartment is located on the ground floor with reserved parking in a private courtyard of the house.',
       features: [
         {
           title: "MASTER SUITE",
@@ -415,7 +419,7 @@ export const ui = {
       title: "Perfectly Located",
       subtitle: "Steps from the lake, close to everything",
       description:
-        "Nestled in the charming town of Garda, on the southeastern shore of Italy's largest and most beautiful lake. Steps from the water, minutes from everything.",
+        "Located at the foot of Mount Stivo, an ideal destination for excursions, MTB trails and climbing. Torbole is also reachable via bike paths and public transport. Very close to supermarkets, ATM, tobacconist, hair salon and bus stop.",
       attractions: [
         {
           name: "Lake Garda Shore",
@@ -478,6 +482,8 @@ export const ui = {
         { title: "No Pets", value: "Not allowed" },
         { title: "No Parties", value: "Quiet hours: 10PM - 8AM" },
       ],
+      taxInfo:
+        "The municipality of Arco requires a tourist tax of €1.50 per person per night to be paid locally upon check-in. For each guest there is an additional cost of €15 per stay for the towel and bed linen kit, to be paid locally upon check-in.",
     },
     booking: {
       title: "Ready to Book?",
