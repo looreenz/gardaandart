@@ -5,6 +5,14 @@ const { class: className } = Astro.props;
 
 const lang = (Astro.currentLocale as "it" | "en" | "de") || "it";
 const t = useTranslations(lang);
+
+const carouselImages = [
+  "/hero.jpg",
+  "/hero_carousel/6496.jpg",
+  "/hero_carousel/6505.jpg",
+  "/hero_carousel/6519.jpg",
+  "/hero_carousel/6520.jpg"
+];
 ---
 
 <section
@@ -16,13 +24,23 @@ const t = useTranslations(lang);
   <div
     class="relative w-full overflow-hidden rounded-[30px] md:rounded-[40px] aspect-[4/5] sm:aspect-[16/9] md:aspect-[21/9] min-h-[500px] md:min-h-[400px]"
   >
-    <!-- Background Image -->
-    <div
-      class="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
-      style="background-image: url('/hero.jpg');"
-    >
-      <!-- Dark overlay for readability -->
-      <div class="absolute inset-0 bg-black/40 md:bg-black/30"></div>
+    <!-- Background Image Carousel -->
+    <div class="absolute inset-0 transition-transform duration-700 hover:scale-105 hero-carousel-container">
+      {
+        carouselImages.map((src, index) => (
+          <div
+            class:list={[
+              "absolute inset-0 bg-cover bg-center transition-opacity duration-1000",
+              index === 0 ? "opacity-100" : "opacity-0"
+            ]}
+            style={`background-image: url('${src}');`}
+            data-carousel-slide
+          >
+            <!-- Dark overlay for readability -->
+            <div class="absolute inset-0 bg-black/40 md:bg-black/30"></div>
+          </div>
+        ))
+      }
     </div>
 
     <!-- Content -->
@@ -43,11 +61,11 @@ const t = useTranslations(lang);
         >
           {t("hero.title")}
         </h1>
-        <p
+        <!-- <p
           class="text-base md:text-xl text-white/90 mb-8 md:mb-10 leading-relaxed font-light"
         >
           {t("hero.subtitle")}
-        </p>
+        </p> -->
 
         <!-- CTA Button -->
         <a
@@ -60,3 +78,32 @@ const t = useTranslations(lang);
     </div>
   </div>
 </section>
+
+<script>
+  function initHeroCarousel() {
+    const carousels = document.querySelectorAll('.hero-carousel-container');
+    
+    carousels.forEach(container => {
+      const slides = container.querySelectorAll('[data-carousel-slide]');
+      if (!slides.length) return;
+      
+      let currentSlide = 0;
+      
+      if ((container as HTMLElement).dataset.carouselInit === 'true') return;
+      (container as HTMLElement).dataset.carouselInit = 'true';
+      
+      setInterval(() => {
+        slides[currentSlide].classList.remove('opacity-100');
+        slides[currentSlide].classList.add('opacity-0');
+        
+        currentSlide = (currentSlide + 1) % slides.length;
+        
+        slides[currentSlide].classList.remove('opacity-0');
+        slides[currentSlide].classList.add('opacity-100');
+      }, 4000);
+    });
+  }
+
+  initHeroCarousel();
+  document.addEventListener('astro:page-load', initHeroCarousel);
+</script>
