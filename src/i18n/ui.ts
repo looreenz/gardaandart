@@ -194,6 +194,63 @@ export const ui = {
       guestsInfo: "Fino a 5 ospiti · 2 camere",
       bookNow: "Prenota Ora",
     },
+    modal: {
+      close: "Chiudi",
+      privacy: {
+        title: "Privacy Policy",
+        sections: [
+          {
+            heading: "Titolare del Trattamento",
+            text: "Il presente sito web è gestito dai proprietari dell'appartamento Garda & Art, con sede ad Arco (TN), Italia. Per qualsiasi comunicazione relativa alla privacy, è possibile contattarci tramite la piattaforma Airbnb.",
+          },
+          {
+            heading: "Dati Raccolti",
+            text: "Questo sito non raccoglie dati personali degli utenti. Non sono presenti moduli di registrazione, login o iscrizione a newsletter. La navigazione avviene in modo anonimo.",
+          },
+          {
+            heading: "Cookie",
+            text: "Il sito utilizza esclusivamente cookie tecnici necessari al corretto funzionamento delle pagine. Non vengono utilizzati cookie di profilazione o di terze parti a fini pubblicitari o di tracciamento.",
+          },
+          {
+            heading: "Contenuti di Terze Parti",
+            text: "Il sito incorpora una mappa Google Maps per mostrare la posizione della struttura. L'utilizzo di tale servizio è soggetto alla Privacy Policy di Google. La prenotazione avviene tramite Airbnb, soggetta ai termini e alla privacy policy di Airbnb.",
+          },
+          {
+            heading: "Diritti degli Utenti",
+            text: "In conformità al GDPR (Regolamento UE 2016/679), hai diritto di accesso, rettifica, cancellazione e opposizione al trattamento dei tuoi dati. Per esercitare tali diritti, contattaci tramite Airbnb.",
+          },
+        ],
+      },
+      terms: {
+        title: "Termini di Servizio",
+        sections: [
+          {
+            heading: "Prenotazione",
+            text: "La prenotazione dell'appartamento avviene esclusivamente tramite la piattaforma Airbnb. Le condizioni di pagamento, cancellazione e rimborso sono interamente regolate dai Termini di Servizio di Airbnb, che si invita a consultare prima della prenotazione.",
+          },
+          {
+            heading: "Check-in / Check-out",
+            text: "Il check-in è possibile dalle 16:00 alle 19:00. Il check-out deve avvenire entro le 10:00. Orari diversi possono essere concordati preventivamente con il proprietario e sono soggetti a disponibilità.",
+          },
+          {
+            heading: "Regole della Casa",
+            text: "È vietato fumare all'interno della struttura. Non sono ammessi animali domestici. Sono vietate feste o eventi rumorosi. Orari di silenzio: 22:00–08:00. Il numero massimo di ospiti consentito è 5. Il mancato rispetto delle regole può comportare la risoluzione anticipata del soggiorno.",
+          },
+          {
+            heading: "Costi Aggiuntivi",
+            text: "Il Comune di Arco richiede una tassa di soggiorno di €1,50 per persona per notte, da pagare in loco al check-in. Per ogni ospite è previsto un costo di €15 a soggiorno per il kit biancheria (asciugamani e lenzuola), da pagare al check-in.",
+          },
+          {
+            heading: "Responsabilità degli Ospiti",
+            text: "Gli ospiti sono responsabili di qualsiasi danno causato alla proprietà o agli arredi durante il soggiorno. Si prega di trattare la struttura con cura. Eventuali danni dovranno essere risarciti secondo le procedure previste dalla piattaforma Airbnb.",
+          },
+          {
+            heading: "Limitazione di Responsabilità",
+            text: "I proprietari di Garda & Art non sono responsabili per furto, smarrimento di oggetti personali o incidenti avvenuti durante il soggiorno. Si consiglia di stipulare un'assicurazione di viaggio.",
+          },
+        ],
+      },
+    },
   },
   de: {
     seo: {
@@ -381,6 +438,63 @@ export const ui = {
       guestsInfo: "Bis zu 5 Gäste · 2 Schlafzimmer",
       bookNow: "Jetzt Buchen",
     },
+    modal: {
+      close: "Schließen",
+      privacy: {
+        title: "Datenschutzbestimmungen",
+        sections: [
+          {
+            heading: "Verantwortlicher",
+            text: "Diese Website wird von den Eigentümern des Apartments Garda & Art mit Sitz in Arco (TN), Italien, betrieben. Für datenschutzbezogene Anfragen kontaktieren Sie uns bitte über die Airbnb-Plattform.",
+          },
+          {
+            heading: "Erhobene Daten",
+            text: "Diese Website erhebt keine personenbezogenen Daten der Nutzer. Es gibt keine Registrierungsformulare, keine Anmeldung und keinen Newsletter. Die Nutzung erfolgt anonym.",
+          },
+          {
+            heading: "Cookies",
+            text: "Die Website verwendet ausschließlich technisch notwendige Cookies für den ordnungsgemäßen Betrieb der Seiten. Es werden keine Profiling- oder Drittanbieter-Cookies zu Werbe- oder Tracking-Zwecken verwendet.",
+          },
+          {
+            heading: "Inhalte Dritter",
+            text: "Die Website bindet eine Google Maps-Karte ein, um die Lage der Unterkunft anzuzeigen. Die Nutzung dieses Dienstes unterliegt der Datenschutzrichtlinie von Google. Buchungen erfolgen über Airbnb gemäß deren Nutzungsbedingungen und Datenschutzrichtlinie.",
+          },
+          {
+            heading: "Rechte der Nutzer",
+            text: "Gemäß DSGVO (EU-Verordnung 2016/679) haben Sie das Recht auf Auskunft, Berichtigung, Löschung und Widerspruch bezüglich Ihrer Daten. Zur Ausübung dieser Rechte kontaktieren Sie uns bitte über Airbnb.",
+          },
+        ],
+      },
+      terms: {
+        title: "Nutzungsbedingungen",
+        sections: [
+          {
+            heading: "Buchung",
+            text: "Die Buchung des Apartments erfolgt ausschließlich über die Airbnb-Plattform. Zahlungs-, Stornierungsund Rückerstattungsbedingungen werden vollständig durch die Airbnb-Nutzungsbedingungen geregelt, die vor der Buchung eingesehen werden sollten.",
+          },
+          {
+            heading: "Check-in / Check-out",
+            text: "Der Check-in ist von 16:00 bis 19:00 Uhr möglich. Der Check-out muss bis 10:00 Uhr erfolgen. Abweichende Zeiten können nach vorheriger Absprache mit dem Eigentümer vereinbart werden und hängen von der Verfügbarkeit ab.",
+          },
+          {
+            heading: "Hausregeln",
+            text: "Rauchen innerhalb der Unterkunft ist nicht gestattet. Haustiere sind nicht erlaubt. Partys oder laute Veranstaltungen sind verboten. Ruhezeiten: 22:00–08:00 Uhr. Die maximale Gästeanzahl beträgt 5 Personen. Bei Nichteinhaltung der Regeln kann der Aufenthalt vorzeitig beendet werden.",
+          },
+          {
+            heading: "Zusatzkosten",
+            text: "Die Gemeinde Arco erhebt eine Kurtaxe von 1,50 € pro Person und Nacht, die beim Check-in vor Ort zu entrichten ist. Für jeden Gast fällt ein Betrag von 15 € pro Aufenthalt für das Bettwäsche- und Handtuch-Set an, zahlbar beim Check-in.",
+          },
+          {
+            heading: "Haftung der Gäste",
+            text: "Die Gäste haften für alle Schäden, die während des Aufenthalts an der Unterkunft oder den Einrichtungen verursacht werden. Bitte behandeln Sie die Unterkunft sorgfältig. Schäden werden gemäß dem Airbnb-Verfahren erstattet.",
+          },
+          {
+            heading: "Haftungsbeschränkung",
+            text: "Die Eigentümer von Garda & Art haften nicht für Diebstahl, Verlust persönlicher Gegenstände oder Unfälle während des Aufenthalts. Es wird empfohlen, eine Reiseversicherung abzuschließen.",
+          },
+        ],
+      },
+    },
   },
   en: {
     seo: {
@@ -567,6 +681,63 @@ export const ui = {
       checkinInfo: "Check-in: from 4:00 PM · Check-out: by 10:00 AM",
       guestsInfo: "Up to 5 guests · 2 bedrooms",
       bookNow: "Book Now",
+    },
+    modal: {
+      close: "Close",
+      privacy: {
+        title: "Privacy Policy",
+        sections: [
+          {
+            heading: "Data Controller",
+            text: "This website is operated by the owners of Garda & Art apartment, located in Arco (TN), Italy. For any privacy-related inquiries, please contact us through the Airbnb platform.",
+          },
+          {
+            heading: "Data Collected",
+            text: "This website does not collect any personal data from users. There are no registration forms, login systems, or newsletter sign-ups. Browsing is fully anonymous.",
+          },
+          {
+            heading: "Cookies",
+            text: "The site uses only technically necessary cookies required for the proper functioning of its pages. No profiling cookies or third-party cookies for advertising or tracking purposes are used.",
+          },
+          {
+            heading: "Third-Party Content",
+            text: "The website embeds a Google Maps map to display the property's location. Use of this service is subject to Google's Privacy Policy. Bookings are made through Airbnb, subject to their Terms of Service and Privacy Policy.",
+          },
+          {
+            heading: "Your Rights",
+            text: "Under the GDPR (EU Regulation 2016/679), you have the right to access, rectify, erase, and object to the processing of your data. To exercise these rights, please contact us via Airbnb.",
+          },
+        ],
+      },
+      terms: {
+        title: "Terms of Service",
+        sections: [
+          {
+            heading: "Booking",
+            text: "Apartment bookings are made exclusively through the Airbnb platform. Payment, cancellation, and refund conditions are entirely governed by Airbnb's Terms of Service, which you are encouraged to review before booking.",
+          },
+          {
+            heading: "Check-in / Check-out",
+            text: "Check-in is available from 4:00 PM to 7:00 PM. Check-out must be completed by 10:00 AM. Different times may be arranged in advance with the host, subject to availability.",
+          },
+          {
+            heading: "House Rules",
+            text: "Smoking inside the property is strictly prohibited. Pets are not allowed. Parties or loud events are forbidden. Quiet hours: 10:00 PM – 8:00 AM. Maximum guests: 5. Failure to comply with house rules may result in early termination of the stay.",
+          },
+          {
+            heading: "Additional Charges",
+            text: "The municipality of Arco requires a tourist tax of €1.50 per person per night, payable locally upon check-in. Each guest is charged an additional €15 per stay for the towel and bed linen kit, also payable at check-in.",
+          },
+          {
+            heading: "Guest Responsibility",
+            text: "Guests are responsible for any damage caused to the property or furnishings during their stay. Please treat the apartment with care and respect. Any damages will be processed through Airbnb's standard resolution process.",
+          },
+          {
+            heading: "Limitation of Liability",
+            text: "The owners of Garda & Art are not liable for theft, loss of personal belongings, or accidents occurring during a guest's stay. We recommend guests obtain travel insurance prior to arrival.",
+          },
+        ],
+      },
     },
   },
 } as const;

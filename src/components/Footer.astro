@@ -1,11 +1,21 @@
 ---
 import { useTranslations } from "../i18n/utils";
+import LegalModal from "./LegalModal.astro";
 
 const bookingUrl =
   "https://www.airbnb.it/rooms/1432004774376243009";
 const currentYear = new Date().getFullYear();
 const lang = (Astro.currentLocale as "it" | "en" | "de") || "it";
 const t = useTranslations(lang);
+
+const privacySections = t("modal.privacy.sections") as readonly {
+  heading: string;
+  text: string;
+}[];
+const termsSections = t("modal.terms.sections") as readonly {
+  heading: string;
+  text: string;
+}[];
 ---
 
 <footer id="contact" class="w-full bg-brand-dark text-white">
@@ -143,17 +153,30 @@ const t = useTranslations(lang);
         © {currentYear} Garda & Art Apartment · {t("footer.rights")}
       </p>
       <div class="flex gap-4">
-        <a
-          href="#"
-          class="text-white/30 text-xs hover:text-white/70 transition-colors"
-          >{t("footer.privacy")}</a
+        <button
+          data-modal-open="modal-privacy"
+          class="text-white/30 text-xs hover:text-white/70 transition-colors cursor-pointer bg-transparent border-0 p-0"
+          >{t("footer.privacy")}</button
         >
-        <a
-          href="#"
-          class="text-white/30 text-xs hover:text-white/70 transition-colors"
-          >{t("footer.terms")}</a
+        <button
+          data-modal-open="modal-terms"
+          class="text-white/30 text-xs hover:text-white/70 transition-colors cursor-pointer bg-transparent border-0 p-0"
+          >{t("footer.terms")}</button
         >
       </div>
     </div>
   </div>
 </footer>
+
+<LegalModal
+  id="modal-privacy"
+  title={t("modal.privacy.title") as string}
+  closeLabel={t("modal.close") as string}
+  sections={privacySections}
+/>
+<LegalModal
+  id="modal-terms"
+  title={t("modal.terms.title") as string}
+  closeLabel={t("modal.close") as string}
+  sections={termsSections}
+/>
