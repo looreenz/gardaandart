@@ -5,47 +5,47 @@ export interface Attraction {
 
 export const nearbyAttractions: Attraction[] = [
   {
-    distance: "150 m",
-    icon: "waves",
-  },
-  {
-    distance: "300 m",
-    icon: "building",
-  },
-  {
-    distance: "600 m",
+    distance: "2 km",
     icon: "castle",
   },
   {
-    distance: "10 km",
-    icon: "wine",
+    distance: "5 km",
+    icon: "waves",
   },
   {
-    distance: "18 km",
-    icon: "star",
+    distance: "5 km",
+    icon: "building",
   },
   {
-    distance: "38 km",
-    icon: "heart",
+    distance: "5 km",
+    icon: "waves",
   },
   {
-    distance: "32 km",
+    distance: "15 min",
+    icon: "trees",
+  },
+  {
+    distance: "15 km",
+    icon: "waves",
+  },
+  {
+    distance: "35 km",
     icon: "landmark",
   },
   {
-    distance: "150 km",
-    icon: "anchor",
+    distance: "80 km",
+    icon: "heart",
   },
 ];
 
 export const propertyAddress = {
-  street: "Via Roma",
-  city: "Garda",
-  province: "Verona",
-  region: "Veneto",
+  street: "Bolognano-Vignole",
+  city: "Arco",
+  province: "Trento",
+  region: "Trentino-Alto Adige",
   country: "Italy",
   coordinates: {
-    lat: 45.574,
-    lng: 10.713,
+    lat: 45.9134,
+    lng: 10.901,
   },
 };

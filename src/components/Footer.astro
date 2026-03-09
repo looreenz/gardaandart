@@ -2,7 +2,7 @@
 import { useTranslations } from "../i18n/utils";
 
 const bookingUrl =
-  "https://www.booking.com/hotel/it/garda-amp-art-apartment.html";
+  "https://www.airbnb.it/rooms/1432004774376243009";
 const currentYear = new Date().getFullYear();
 const lang = (Astro.currentLocale as "it" | "en" | "de") || "it";
 const t = useTranslations(lang);
@@ -16,11 +16,10 @@ const t = useTranslations(lang);
         <img
           src="/logo.JPG"
           alt="Garda & Art Logo"
-          class="h-8 w-auto object-contain brightness-0 invert"
+          class="h-8 md:h-10 w-auto object-contain"
         />
         <p class="text-white/60 text-sm leading-relaxed font-light">
-          A curated stay where art meets the beauty of Lake Garda. Designed for
-          those who appreciate beauty in every detail.
+          {t("footer.tagline")}
         </p>
         <div class="flex gap-2">
           <div class="w-6 h-1 bg-brand-cyan rounded-full"></div>
@@ -34,7 +33,7 @@ const t = useTranslations(lang);
         <h4
           class="font-bold text-sm tracking-widest uppercase mb-5 text-white/40"
         >
-          Explore
+          {t("footer.exploreTitle")}
         </h4>
         <ul class="space-y-3">
           {
@@ -64,7 +63,7 @@ const t = useTranslations(lang);
         <h4
           class="font-bold text-sm tracking-widest uppercase mb-5 text-white/40"
         >
-          Book & Contact
+          {t("footer.bookContactTitle")}
         </h4>
         <div class="space-y-4 mb-6">
           <div class="flex items-center gap-3 text-sm text-white/60">
@@ -80,7 +79,7 @@ const t = useTranslations(lang);
                 d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
               ></path></svg
             >
-            Garda, Verona · Lake Garda, Italy
+            {t("footer.address")}
           </div>
           <div class="flex items-center gap-3 text-sm text-white/60">
             <svg
@@ -95,7 +94,7 @@ const t = useTranslations(lang);
                 d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
               ></path></svg
             >
-            Check-in 3 PM · Check-out 11 AM
+            {t("footer.checkinInfo")}
           </div>
           <div class="flex items-center gap-3 text-sm text-white/60">
             <svg
@@ -110,7 +109,7 @@ const t = useTranslations(lang);
                 d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
               ></path></svg
             >
-            Up to 4 guests · 2 bedrooms
+            {t("footer.guestsInfo")}
           </div>
         </div>
         <a
@@ -131,7 +130,7 @@ const t = useTranslations(lang);
               d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z"
             ></path></svg
           >
-          Book Now
+          {t("footer.bookNow")}
         </a>
       </div>
     </div>

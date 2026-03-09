@@ -79,7 +79,7 @@ const iconsSvg: Record<string, string> = {
         class="w-full aspect-video rounded-[24px] overflow-hidden shadow-lg border border-brand-border"
       >
         <iframe
-          src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5579.0!2d${propertyAddress.coordinates.lng}!3d${propertyAddress.coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4781e3bfb3b3b3b3%3A0x0!2sGarda%2C+VR%2C+Italy!5e0!3m2!1sen!2sit!4v1700000000000!5m2!1sen!2sit`}
+          src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5579.0!2d${propertyAddress.coordinates.lng}!3d${propertyAddress.coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47820de38c1e3d85%3A0x0!2sArco%2C+TN%2C+Italy!5e0!3m2!1sen!2sit!4v1700000000000!5m2!1sen!2sit`}
           width="100%"
           height="100%"
           style="border:0;"
@@ -92,7 +92,7 @@ const iconsSvg: Record<string, string> = {
 
     <!-- Right: Nearby Attractions -->
     <div>
-      <h3 class="text-xl font-bold text-brand-dark mb-6">Nearby Attractions</h3>
+      <h3 class="text-xl font-bold text-brand-dark mb-6">{t("location.nearbyTitle")}</h3>
       <div class="space-y-3">
         {
           nearbyAttractions.map((attr, i) => {

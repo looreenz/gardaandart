@@ -5,7 +5,7 @@ export interface Stat {
 
 export const stats: Stat[] = [
   {
-    value: "1º",
+    value: "PT",
     variant: "dark",
   },
   {

@@ -23,12 +23,12 @@ const t = useTranslations(lang);
       <!-- Overall Score -->
       <div class="flex items-center gap-5 bg-white rounded-2xl px-6 py-5 shadow-sm border border-brand-border w-fit">
         <div class="text-center">
-          <span class="text-5xl font-bold text-brand-cyan">{overallScore}</span>
-          <p class="text-xs text-gray-500 font-medium mt-1">out of 10</p>
+          <span class="text-5xl font-bold text-brand-cyan">4.89</span>
+          <p class="text-xs text-gray-500 font-medium mt-1">{t("reviews.outOf")}</p>
         </div>
         <div class="w-px h-12 bg-gray-200"></div>
         <div>
-          <p class="font-bold text-brand-dark text-lg">Exceptional</p>
+          <p class="font-bold text-brand-dark text-lg">{t("reviews.badge")}</p>
           <p class="text-sm text-gray-500">{totalReviews} {t("reviews.reviewsText")}</p>
           <div class="flex gap-1 mt-1">
             {[1,2,3,4,5].map(() => (
@@ -72,10 +72,10 @@ const t = useTranslations(lang);
       ))}
     </div>
 
-    <!-- Booking.com Attribution -->
+    <!-- Airbnb Attribution -->
     <div class="mt-10 flex items-center gap-3 text-sm text-gray-400">
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
-      <span>Reviews collected from verified guests on Booking.com</span>
+      <span>{t("reviews.attribution")}</span>
     </div>
   </div>
 </section>
